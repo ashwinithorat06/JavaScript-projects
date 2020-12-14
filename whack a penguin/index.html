@@ -1,0 +1,276 @@
+<!---------------------------------------------------------------------------------------------------------------
++ JAVASCRIPT PROJECT :  2
++ Project Title      :  Whack a Penguin
++ Description        :  Whack a penguine is a game, which will be played by a single user. Whenever user click 
+                        on image it should pop – up a penguine. If the penguine image is yeti, then user should 
+                        get a message “ROARRRRRR” along with the yeti image. 
++ Start Date         :  20/june/2020
++ End Date           :  23/june/2020
+----------------------------------------------------------------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguine Game</title>
+    <link rel="stylesheet" href="style_penguine1.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body onload="arrayinit();">
+    <header><img src="./pimages/penguin_title.png" alt="Find the Penguine"></header>
+    <div class="grid_display">
+        <div class="pen1">
+            <img src="./pimages/mound_1.png" id="cloud1" alt="cloud1" onmouseover="question(1);" onmouseout="cloud(1);"
+                onclick=" penguine(1);myFunction()">
+            <!-- <img src="./pimages/mound_1_hover.png" id="hover1" alt="Question1"   > -->
+        </div>
+
+        <div class="pen2">
+            <img src="./pimages/mound_2.png" id="cloud2" alt="cloud2" onmouseover="question(2);" onmouseout="cloud(2);"
+                onclick="penguine(2);myFunction()">
+            <!-- <img src="./pimages/mound_2_hover.png" id="hover2" alt="Question2"  > -->
+        </div>
+
+        <div class="pen3">
+            <img src="./pimages/mound_3.png" id="cloud3" alt="cloud3 " onmouseover="question(3);" onmouseout="cloud(3);"
+                onclick="penguine(3);myFunction()">
+            <!-- <img src="./pimages/mound_3_hover.png"  id="hover3" alt="Question3" > -->
+        </div>
+
+        <div class="pen4">
+            <img src="./pimages/mound_4.png" id="cloud4" alt="cloud4" onmouseover="question(4);" onmouseout="cloud(4);"
+                onclick="penguine(4);myFunction()">
+            <!-- <img src="./pimages/mound_4_hover.png" id="hover4" alt="Question4" > -->
+        </div>
+
+        <div class="pen5">
+            <img src="./pimages/mound_5.png" id="cloud5" alt="cloud5" onmouseover="question(5);" onmouseout="cloud(5);"
+                onclick="penguine(5);myFunction()">
+            <!-- <img src="./pimages/mound_5_hover.png" id="hover5" alt="Question5" > -->
+        </div>
+
+        <div class="pen6">
+            <img src="./pimages/mound_6.png" id="cloud6" alt="cloud6" onmouseover="question(6);" onmouseout="cloud(6);"
+                onclick="penguine(6);myFunction()">
+            <!-- <img src="./pimages/mound_6_hover.png" id="hover6" alt="Question6" > -->
+        </div>
+
+        <div class="pen7">
+            <img src="./pimages/mound_7.png" id="cloud7" alt="cloud7" onmouseover="question(7);" onmouseout="cloud(7);"
+                onclick="penguine(7);myFunction()">
+            <!-- <img src="./pimages/mound_7_hover.png" id="hover7" alt="Question7" > -->
+        </div>
+
+        <div class="pen8">
+            <img src="./pimages/mound_8.png" id="cloud8" alt="cloud8" onmouseover="question(8);" onmouseout="cloud(8);"
+                onclick="penguine(8);myFunction()">
+            <!-- <img src="./pimages/mound_8_hover.png" id="hover8" alt="Question8" > -->
+        </div>
+
+        <div class="pen9">
+            <img src="./pimages/mound_9.png" id="cloud9" alt="cloud9" onmouseover="question(9);" onmouseout="cloud(9);"
+                onclick=" penguine(9);myFunction()">
+            <!-- <img src="./pimages/mound_9_hover.png" id="hover9" alt="Question9" > -->
+        </div>
+    </div>
+
+    <script>
+        function arrayinit() {
+            arrnew = [];
+        }
+        var inc = 0;
+        function myFunction() {
+            inc = inc + 1;
+            if (inc == 9) {
+                // var image1= new Image();
+                // image1.src="winner5.jpg";
+                // image1.width=800;
+                // document.write("<h1>Winner <br> </h1>");
+                // document.body.style.backgroundColor = " rgb(255, 255, 255)";
+                // document.body.append(image1);
+                window.location.replace("winner.html");
+
+            }
+
+        }
+        function question(num) {
+            var random_images = [
+                {
+                    src: "./pimages/mound_1_hover.png"
+                },
+                {
+                    src: "./pimages/mound_2_hover.png"
+                },
+                {
+                    src: "./pimages/mound_3_hover.png"
+                },
+                {
+                    src: "./pimages/mound_4_hover.png"
+                },
+                {
+                    src: "./pimages/mound_5_hover.png"
+                },
+                {
+                    src: "./pimages/mound_6_hover.png"
+                },
+                {
+                    src: "./pimages/mound_7_hover.png"
+                },
+                {
+                    src: "./pimages/mound_8_hover.png"
+                },
+                {
+                    src: "./pimages/mound_9_hover.png"
+                }
+            ];
+            var temp = [];
+            for (var i = 0, j = random_images.length; i < j; i++) {
+                temp[i] = new Image();
+                temp[i].src = random_images[i].src;
+            }
+            document.getElementsByTagName("img")[num].src = temp[num - 1].src;
+        }
+        function cloud(num) {
+            var random_images = [
+                {
+                    src: "./pimages/mound_1.png"
+                },
+                {
+                    src: "./pimages/mound_2.png"
+                },
+                {
+                    src: "./pimages/mound_3.png"
+                },
+                {
+                    src: "./pimages/mound_4.png"
+                },
+                {
+                    src: "./pimages/mound_5.png"
+                },
+                {
+                    src: "./pimages/mound_6.png"
+                },
+                {
+                    src: "./pimages/mound_7.png"
+                },
+                {
+                    src: "./pimages/mound_8.png"
+                },
+                {
+                    src: "./pimages/mound_9.png"
+                }
+            ];
+            var temp = [];
+            for (var i = 0, j = random_images.length; i < j; i++) {
+                temp[i] = new Image();
+                temp[i].src = random_images[i].src;
+            }
+            document.getElementsByTagName("img")[num].src = temp[num - 1].src;
+        }
+
+        //     function AutoRefresh(t){
+        //     setTimeout("location.reload(true);",t);
+        // }
+
+        function penguine(num) {
+            var random_images = [
+                {
+                    src: "./pimages/penguin_1.png"
+                },
+                {
+                    src: "./pimages/penguin_2.png"
+                },
+                {
+                    src: "./pimages/penguin_3.png"
+                },
+                {
+                    src: "./pimages/penguin_4.png"
+                },
+                {
+                    src: "./pimages/yeti.png"
+                },
+                {
+                    src: "./pimages/penguin_5.png"
+                },
+                {
+                    src: "./pimages/penguin_6.png"
+                },
+                {
+                    src: "./pimages/penguin_7.png"
+                },
+                {
+                    src: "./pimages/penguin_8.png"
+                }
+            ];
+
+            var temp = [];
+            for (var i = 0, j = random_images.length; i < j; i++) {
+                temp[i] = new Image();
+                temp[i].src = random_images[i].src;
+            }
+            // //create Random number for images to display randomly
+            // function random_Num_func(max){
+            //   var random_Num=Math.floor(Math.random()*max+1);
+            //         return random_Num;         
+            // }
+
+
+            // // 0 is first image,   temp.length - 1) is  last image
+            // var Num_ber = random_Num_func( temp.length - 1);
+            //create Random number for images to display randomly
+
+
+
+
+
+            var arr = [];
+
+            function random_Num_func(arr) {
+                if (arr.length >= 9) return; //to check till max length
+                var random_Num = Math.floor(Math.random() * 9);
+                if (arr.indexOf(random_Num) < 0) {  //check if number is not repeating.
+                    console.log(random_Num);
+                    arr.push(random_Num);  //indexof() returns -1 if not repeating
+                    return random_Num;
+                }
+                else
+                    random_Num_func(arr);
+
+            }
+            // for(i=1; i<10;i++){
+            // var Num_ber=random_Num_func(arr)
+            // }
+            // for(i=1; i<10;i++){
+            var Num_ber = random_Num_func(arr);
+            // }
+
+
+
+
+            var newImage = temp[Num_ber];
+            //check if yeti image is returned
+            if (Num_ber == 4) {
+                window.location.replace("yeti.html");
+            }
+
+            // remove the previous images
+            var targetContainer = document.getElementsByTagName('div')[num];
+            var images = targetContainer.getElementsByTagName('img');
+            for (var p = 0; p < images.length; p++) {
+                images[0].parentNode.removeChild(images[0]);
+                // images[0].remove();
+            }
+
+            // display the image  
+            targetContainer.appendChild(newImage);
+
+
+
+        }   
+    </script>
+</body>
+
+</html>

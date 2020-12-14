@@ -1,0 +1,166 @@
+*{
+	padding:0;
+	margin:0;
+	box-sizing:border-box;
+	font-family: sans-serif;
+}
+/*css for id=main*/
+#main{
+	background-color: rgb(55, 68, 109);
+	height: 94vh;
+	padding-top: 20px;
+	margin: 0 30px 30px;
+}
+/*css for id=header*/
+#header{
+	width:100%;
+	height:5vw;
+	background-color:rgb(245, 130, 22);	
+}
+/*label*/
+#header h1{
+	color:white;
+	text-align:center;
+    line-height: 5vw;
+	font-size:2.6vw;
+}
+/*filter*/
+#filter{
+	background-color:rgb(245, 130, 22);
+	padding:1vw 0;
+	display: flex;
+	justify-content: center;
+}
+/*css for class btn*/
+#filter .btn{
+	color: black;
+	padding:0 2vw;
+	font-size: 17px;
+}
+
+/*search*/
+.search_item input, .search_item button{
+	height: 20px;
+	border:none;
+	background-color: white;
+}
+/*list*/
+#list{
+	position:relative;
+	width:65%;
+	height:auto;
+	padding:1vw 2vw;
+	background-color:rgb(143, 141, 141);
+	margin: auto;
+}
+/*additem class*/
+.additem{
+	margin-bottom:1vw;
+	background-color:rgb(245, 130, 22);
+	padding:1vw;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.additem input{
+	width:50%;
+	height: 24px;
+	padding: 3px;
+}
+/*add button*/
+.addbtn{
+	background-color: rgb(55, 68, 109);
+	border: none;
+	color: white;
+	font-size: 18px;
+	padding: 2px 40px;
+}
+/*table*/
+table{
+	width:100%;
+	/* padding:1px; */
+	border-collapse:collapse;
+}
+td{
+	padding:0.5vw;
+}
+tr{
+	height:1.5vw;
+	background-color:rgb(104, 101, 101);
+	margin-top: 10px;
+	border-bottom:1px solid black;
+}
+/*icons*/
+.fa-pencil-alt{
+	color: darkturquoise;	
+	font-size: larger;
+}
+.fas{
+	background-color: black;
+	border-radius: 3px;
+	padding: 5px;
+}
+.fa-times{
+	color: red;
+	font-size: larger;
+	padding: 5px 8px;
+}
+/*search icon*/
+.fa-search{
+	background-color: white;
+	padding: 0;
+}
+#complete{
+	visibility: hidden;
+	color: green;
+}
+ input[type="checkbox"]:checked {
+            box-shadow: 0 0 0 3px green;  
+}
+.btn{
+	border:none;
+	background-color:transparent;
+	color:white;
+}
+.btn:hover{
+	color:red;
+}
+/*css for form*/
+#todoform{
+	background-color: rgb(55, 68, 109);
+	position:absolute;
+	width:100%;
+	height: 90vh;
+	visibility:hidden;
+	padding:1vw;
+	top: 0%;
+}
+form{
+	width: 50%;
+	margin: auto;
+	text-align:left;
+	padding: 0 10%;
+	background-color: white;
+}
+.inp{
+	margin:1vw;
+	margin-left:3vw;
+}
+.inp2{
+	margin-left: 5.5vw;
+}
+.btn1{
+	display:inline-block;
+	padding:0.2vw;
+	border:1px solid black;
+	background-color:rgb(245, 130, 22);
+	margin:1vw;
+}
+.todo_item{
+	position:relative;
+}
+#description_set,#date_set,#time_set{
+	position:absolute;
+	visibility:hidden;	
+}
+

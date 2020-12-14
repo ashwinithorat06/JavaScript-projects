@@ -1,0 +1,120 @@
+<!---------------------------------------------------------------------------------------------------------------
++ JAVASCRIPT PROJECT :  1
++ Project Title      :  ToDo list
++ Description        :  Generate ToDo list 
++ Start Date         :  15/june/2020
++ End Date           :  20/june/2020
+----------------------------------------------------------------------------------------------------------------->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO list</title>
+	<!---ext css file---->
+    <link rel='stylesheet' type='text/css' href='style.css'>
+    <!---ext js file---->
+    <script src='main.js'></script>
+    <!---cdnjs link---->	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
+</head>
+<body>
+    <!--parent div-->
+    <div id="main">
+        <!---header---->
+        <div id="header"> 
+            <!---label---->
+            <h1>TODO APP</h1>
+        </div>
+        <!---nav bar---->
+        <div id="filter"  style="color: black;">
+            <p>
+                <button class="btn filter_btn">Filter:</button>
+                <button class="btn filter_btn" onclick="showall();">Show all</button>
+                <button class="btn filter_btn" onclick="showcompleted();">Complete</button>
+                <button class="btn filter_btn" onclick="showincomplete();">Incomplete</button>
+            </p>
+            <!---search button---->
+            <p class="search_item"><input type="text" id="search_text" placeholder="search..."><button onclick="searchme();"><i class="fas fa-search"></i></button></p>
+        </div>
+
+        <div id="list">
+            <div class="additem" id="additem">
+                <!--lable-->
+                <p>Add a new task</p> 
+                <input type="text" placeholder="what else need to be done?" id="addtext" list="newadd">
+                <!----datalist---->
+                <datalist id="newadd">
+                    <option value="Take The Dog For Walk"></option>
+                    <option value="Wake Up"></option>
+                    <option value="Go To Sleep"></option>
+                    <option value="Interview"></option>
+                    <option value="Buy eggs"></option>
+                    <option value="Read a book"></option>
+                    <option value="Study"></option>
+                    <option value="Pay Bills"></option>
+                    <option value="Weekend Plan"></option>                        
+                    <option value="Dinner Time"></option>
+                    <option value="Hit the gym"></option>
+                    <option value="Appointment"></option>
+                    <option value="Exam"></option>
+                    <option value="Family functions"></option>
+                    <option value="Organize office"></option>
+                    <option value="family time"></option>                        
+                    <option value="Practise the codes"></option>
+                    <option value="Read a book on JavaScript"></option>
+                    <option value="Organise my notes"></option>
+                    <option value="Create JavaScript projects"></option>
+                    <option value="Take quiz"></option>
+                    <option value="Comprehend interview questions"></option>
+                </datalist>
+                <!---add button---->
+                <button onclick="additem();" class="addbtn">Add!</button>
+            </div>
+            <!---table to display todo list and to edit or delete it--->
+            <table id="mytable">
+                <tr>
+                    <td><input type="checkbox" checked id="complete" disabled></td> 
+                    <td class='todo_item'>Cook Asian Dinner<span id="description_set"></span><span id="date_set"></span><span id="time_set"></span></td> 
+                    <!--<td><button id="edit" onclick="edit(this);" class="btn"><i class="fa fa-edit"></i></button></td>--> 
+                    <td><button id='edit' onclick='edit(this);'class='btn'><i class="fas fa-pencil-alt"></i></button></td>
+                    <td><button id="delete" onclick="dlt(this);" class="btn"><i class="fas fa-times"></i></button></td>
+                </tr>
+                
+                <tr>
+                    <td><input type="checkbox" checked id="complete" disabled></td> 
+                    <td class='todo_item'>Exercise<span id="description_set"></span><span id="date_set"></span><span id="time_set"></span></td> 
+                    <td><button id='edit' onclick='edit(this);'class='btn'><i class="fas fa-pencil-alt"></i></button></td>
+                    <td><button id="delete" onclick="dlt(this);" class="btn"><i class="fas fa-times"></i></button></td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" checked id="complete" disabled></td> 
+                    <td class='todo_item'>Learn Angular2<span id="description_set"></span><span id="date_set"></span><span id="time_set"></span></td> 
+                    <td><button id='edit' onclick='edit(this);'class='btn'><i class="fas fa-pencil-alt"></i></button></td>
+                    <td><button id="delete" onclick="dlt(this);" class="btn"><i class="fas fa-times"></i></button></td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" checked id="complete" disabled></td> 
+                    <td class='todo_item'>Do The Shopping<span id="description_set"></span><span id="date_set"></span><span id="time_set"></span></td> 
+                    <td><button id='edit' onclick='edit(this);'class='btn'><i class="fas fa-pencil-alt"></i></button></td>
+                    <td><button id="delete" onclick="dlt(this);" class="btn"><i class="fas fa-times"></i></button></td>
+                </tr>
+            </table>
+        </div>
+        <!----to enter details about todo task---->
+        <div id="todoform">
+            <form>
+                <h3 id="tasktitle"></h3>
+                Description:<input type="text" placeholder="description" class="inp" required id="description"><br>
+                Date:<input type="date" class="inp inp2" required id="date"><br>
+                Time:<input type="time" class="inp inp2" required id="time"><br>
+                <input type="reset" value="RESET" class="btn1">
+                <p onclick="setall();" class="btn1">Set Reminder</p>
+                <p onclick="backme();" class="btn1">Go Back</p>
+            </form>
+        </div>
+    </div> 
+</body>
+</html>

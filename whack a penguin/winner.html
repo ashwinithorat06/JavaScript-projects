@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner</title>
+    <style>
+        body {
+            background-color: white;
+        }
+
+        /* p{
+            font-size: 6rem;
+             text-align: center; 
+        } */
+        button {
+            margin-top: -2%;
+            margin-bottom: 2%;
+            font-size: xx-large;
+            margin-left: 42%;
+            padding: 1% 2%;
+            border-radius: 10px;
+            border: transparent;
+            box-shadow: 0px 5px 10px grey;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+        }
+
+        button:hover {
+            background-color: rgb(58, 170, 6);
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: xx-large;
+
+        }
+
+        img {
+            margin-left: 42%;
+            margin-top: 2%;
+            margin-bottom: 3%;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        var arr = [];
+        //create Random number for images to display randomly
+        function random_Num_func(arr) {
+            if (arr.length >= 9) return; //to check till max length
+            var random_Num = Math.floor(Math.random() * 9);
+            if (arr.indexOf(random_Num) < 0) {  //check if number is not repeating.
+                console.log(random_Num);
+                arr.push(random_Num);  //indexof() returns -1 if not repeating
+                return random_Num;
+            }
+            else {
+                random_Num_func(arr);
+            }
+        }
+        for (i = 1; i < 10; i++) {
+            random_Num_func(arr)
+        }
+    </script>
+    <img src="winner2.jpg" alt="image"> <br> <br>
+
+    <button onClick="window.location='mouse_overpen.html';">Play Again</button> <br>
+</body>
+
+</html>
